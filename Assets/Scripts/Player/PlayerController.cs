@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Player.Singleton.Core.Singleton;
 
 public class PlayerController : Singleton<PlayerController>
 {
+
     //Publics
     [Header("Lerp")]
     public Transform target;
@@ -13,6 +15,8 @@ public class PlayerController : Singleton<PlayerController>
     public float speed = 5f;
     public string tagToCheckEnemy = "Enemy";
     public string tagToCheckEndLine = "EndLine";
+
+    public bool invincible = false;
 
     public GameObject endScreen;
 
@@ -25,7 +29,7 @@ public class PlayerController : Singleton<PlayerController>
     private void Start()
     {
         _startPosition = transform.position;
-        //ResetPosition();
+        ResetSpeed();
     }
 
     void Update()
@@ -44,14 +48,14 @@ public class PlayerController : Singleton<PlayerController>
     {
         if(collision.transform.tag == tagToCheckEnemy)
         {
-            EndGame();
+            if(!invincible) EndGame();
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == tagToCheckEndLine)
         {
-            EndGame();
+            if(!invincible) EndGame();
         }
     }
 
@@ -80,6 +84,11 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetSpeed()
     {
         _currentSpeed = speed;
+    }
+
+    public void SetInvincible(bool b)
+    {
+        invincible = b;
     }
 
     #endregion
