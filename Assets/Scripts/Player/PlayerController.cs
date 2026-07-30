@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Player.Singleton.Core.Singleton;
+using DG.Tweening;
 
 public class PlayerController : Singleton<PlayerController>
 {
 
     //Publics
+    [Header("TextPowerUp")]
+    public TextMeshPro UITextPowerUp;
+
     [Header("Lerp")]
     public Transform target;
     public float lerpSpeed = 5f;
@@ -73,7 +77,7 @@ public class PlayerController : Singleton<PlayerController>
     #region Power Ups
     public void SetPowerUpText(string text)
     {
-        //UITextPowerUp.Text = text;
+        UITextPowerUp.text = text;
     }
 
     public void PowerSpeedUp(float f)
@@ -89,6 +93,21 @@ public class PlayerController : Singleton<PlayerController>
     public void SetInvincible(bool b)
     {
         invincible = b;
+    }
+
+    public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
+    {
+       /*var p = transform.position;
+       p.y = _startPosition.y + amount;
+       transform.position = p;*/
+
+       transform.DOMoveY(_startPosition.y + amount, animationDuration).SetEase(ease);
+       Invoke(nameof(ResetHeight), duration);
+    }
+
+    public void ResetHeight(float animationDuration)
+    {
+        transform.DOMoveY(_startPosition.y, animationDuration);
     }
 
     #endregion
