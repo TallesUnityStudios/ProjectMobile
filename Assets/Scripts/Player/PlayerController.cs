@@ -12,6 +12,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("TextPowerUp")]
     public TextMeshPro UITextPowerUp;
 
+    [Header("Coins Collector")]
+    public GameObject coinsCollector;
+
     [Header("Lerp")]
     public Transform target;
     public float lerpSpeed = 5f;
@@ -110,6 +113,10 @@ public class PlayerController : Singleton<PlayerController>
         transform.DOMoveY(_startPosition.y, animationDuration);
     }
 
+    public void ChangeCoinsCollectorSize(float amount)
+    {
+        coinsCollector.transform.localScale = Vector3.one * amount;
+    }
     #endregion
 
 }
