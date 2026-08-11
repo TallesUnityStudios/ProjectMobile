@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b309ac79c6ee58f4ca09f5d59e9131db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compareTag: Player
+  compareTag: CoinCollector
   timeToHide: 0
   graphicItem: {fileID: 1539912718419439133}
   audioSound: {fileID: 0}
