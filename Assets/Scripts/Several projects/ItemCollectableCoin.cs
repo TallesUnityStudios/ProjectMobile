@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,9 +35,14 @@ public class ItemCollectableCoin : ItemCollectableBase
 
             if (Vector3.Distance(transform.position, PlayerController.Instance.transform.position) < minDistance)
             {
-                HideItens();
+                HideObject();
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void HideObject()
+    {
+        throw new NotImplementedException();
     }
 }
