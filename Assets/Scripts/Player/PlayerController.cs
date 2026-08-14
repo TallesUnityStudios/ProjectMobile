@@ -20,7 +20,7 @@ public class PlayerController : Singleton<PlayerController>
     public float lerpSpeed = 5f;
 
     public float speed = 5f;
-    public string tagToCheckEnemy = "Enemy";
+    public string tagToCheckEnemy = "Enemy";    
     public string tagToCheckEndLine = "EndLine";
 
     public bool invincible = false;
