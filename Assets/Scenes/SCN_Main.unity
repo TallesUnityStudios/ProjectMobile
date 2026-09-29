@@ -1534,6 +1534,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MDL_Astronaut Legacy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c363eff329168e549a1da4f4cfe11d93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2223639932434330405, guid: c363eff329168e549a1da4f4cfe11d93, type: 3}
       propertyPath: m_Animation
       value: 
@@ -2940,11 +2944,44 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5531986718136724959, guid: 89e20167823a30d459856414377997d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2098579023}
   m_SourcePrefab: {fileID: 100100000, guid: 89e20167823a30d459856414377997d1, type: 3}
 --- !u!4 &2098579021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 2098579020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2098579022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5531986718136724959, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 2098579020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2098579023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098579022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1d2f10396f856409637153c7c2997a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2098579024}
+  animationSetups:
+  - type: 0
+    trigger: idle
+  - type: 1
+    trigger: run
+  - type: 2
+    trigger: dead
+--- !u!95 &2098579024 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7193805671317595757, guid: 89e20167823a30d459856414377997d1, type: 3}
   m_PrefabInstance: {fileID: 2098579020}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &453641315792812772
